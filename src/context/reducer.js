@@ -4,7 +4,8 @@ export function reducer (state, action) {
             state.questions = action.payload.questions;
             return {...state};
         case "SET_SCORE":
-            state.score = action.payload.score;
+            if (action.payload.isTrue)
+                state.score = state.score + 1;
             return {...state};
         default:
             return state;
