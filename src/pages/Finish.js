@@ -4,6 +4,8 @@ import {useSelector} from 'react-redux';
 
 import {finishPage} from './styles';
 
+// geri tusuna basinca sorulara donmemesi lazim
+
 const Finish = (props) => {
   const userScore = useSelector( global => global.score);
   return (

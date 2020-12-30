@@ -6,12 +6,11 @@ import {
   TouchableOpacity,
   Animated,
 } from 'react-native';
-import { CountdownCircleTimer } from 'react-native-countdown-circle-timer';
 import {useDispatch} from 'react-redux';
 
 import axios from 'axios';
 import { introPage } from './styles';
-import { CategorySelectModal } from '../components';
+import { CategorySelectModal, TimerModal } from '../components';
 
 const Intro = (props) => {
   
@@ -28,6 +27,7 @@ const Intro = (props) => {
         amount : 10,
         category : selectedCategory.id,
         type: "boolean",
+        encode: "base64"
       },
     })
     .then(response => {
@@ -39,31 +39,16 @@ const Intro = (props) => {
     setCounterFlag(true);
   }
 
+  const counterEnd = () => {
+    setCounterFlag(false);
+    props.navigation.navigate("Questions")
+  }
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ flex: 1 }}>
         <View style={introPage.container}>
           <Text style={introPage.bannerText}>Trivia!</Text>
-        </View>
-
-        <View style={{backgroundColor:"#3949ab", alignItems:"center"}}>
-
-          <CountdownCircleTimer
-            isPlaying={counterFlag}
-            duration={5}
-            onComplete={() => props.navigation.navigate("Questions")}
-            colors={[
-              ['#004777', 0.4],
-              ['#F7B801', 0.4],
-              ['#A30000', 0.2],
-            ]}
-          >
-            {({ remainingTime, animatedColor }) => (
-              <Animated.Text style={{ color: "white", fontSize: 50, fontWeight: "bold" }}>
-                {remainingTime}
-              </Animated.Text>
-            )}
-          </CountdownCircleTimer>
         </View>
 
         <View style={introPage.container}>
@@ -79,6 +64,11 @@ const Intro = (props) => {
           visibility={modalFlag}
           onClose={() => setModalFlag(false)}
           onCategorySelect={startGame}
+        />
+
+        <TimerModal
+          counterFlag={counterFlag}
+          onTimeEnd={counterEnd}
         />
 
       </View>

@@ -10,7 +10,7 @@ export const introPage = StyleSheet.create({
   bannerText: {
     fontSize: 100,
     color: 'white',
-    fontFamily: 'IndieFlower-Regular'
+    fontFamily: 'Lobster-Regular'
   },
   buttonContainer: {
     backgroundColor: '#fb8c00',
@@ -21,7 +21,7 @@ export const introPage = StyleSheet.create({
   buttonText: {
     fontSize: 40,
     color: 'white',
-    fontFamily: 'Ubuntu-Regular'
+    fontFamily: 'Lobster-Regular'
   }
 });
 
@@ -35,6 +35,6 @@ export const finishPage = StyleSheet.create({
     color: 'white',
     fontSize: 100,
     textAlign: 'center',
-    fontFamily: 'IndieFlower-Regular'
+    fontFamily: 'Lobster-Regular'
   }
 });

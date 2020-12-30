@@ -62,6 +62,24 @@ export const questionItem = StyleSheet.create({
   buttonText: {
     fontSize: 40,
     color: 'white',
-    fontFamily: 'IndieFlower-Regular',
+    fontFamily: 'Lobster-Regular',
   },
 });
+
+export const timerModal = StyleSheet.create({
+  container: {
+    padding: 50, 
+    margin:30, 
+    backgroundColor: "white", 
+    alignItems: "center", 
+    borderRadius: 50,
+    borderWidth: 3,
+    borderColor:"gray"
+  },
+  textStyle: {
+    color: "gray",
+    fontFamily: "Lobster-Regular", 
+    fontSize: 50, 
+    fontWeight: "bold" 
+  }
+})

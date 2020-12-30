@@ -3,9 +3,7 @@ import {
   SafeAreaView,
   View,
   FlatList,
-  Text,
   Animated,
-  Button,
 } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { QuestionItem } from '../components';
